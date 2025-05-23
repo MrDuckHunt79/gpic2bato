@@ -17,21 +17,26 @@ wget -O  $script "$SourcePath/GPic2SS.py"
 
 
 #Create Batocera Service (custom.sh is deprecated since v38)----------
-mkdir /userdata/system/services
-sleep 2s
-DIR=/userdata/system/services/GPic2SS
-
-if grep -q "python $script &" "$DIR";
+if [ ! -d /userdata/system/services ];
         then
-                if [ -x "$DIR" ];
+                mkdir /userdata/system/services
+fi
+
+sleep 2s
+
+SERVICE=/userdata/system/services/GPic2SS
+
+if grep -q "python $script &" "$SERVICE";
+        then
+                if [ -x "$SERVICE" ];
                         then
                                 echo "Service GPic2SS configured. Doing nothing."
                         else
-                                chmod +x $DIR
+                                chmod +x $SERVICE
                 fi
         else
-                echo "python $script &" >> $DIR
-                chmod +x $DIR
+                echo "python $script &" >> $SERVICE
+                chmod +x $SERVICE
                 echo "Service GPic2SS configured."
 fi
 
