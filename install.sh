@@ -34,6 +34,9 @@ if grep -q "python $script &" "$DIR";
                 chmod +x $DIR
                 echo "Service GPic2SS configured."
 fi
+
+batocera-service enable GPic2SS
+sleep 2s
 #Reboot-----------------------------------------------------------
 
 echo "GPi case 2 Safe Shutdown service installation done. Will now reboot after 3 seconds."
