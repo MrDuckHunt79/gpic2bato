@@ -35,7 +35,7 @@ if grep -q "python $script &" "$DIR";
                 echo "Service GPic2SS configured."
 fi
 
-batocera-service enable GPic2SS
+batocera-services enable GPic2SS
 sleep 2s
 #Reboot-----------------------------------------------------------
 
