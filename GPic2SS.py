@@ -1,4 +1,5 @@
 import os
+import time
 import RPi.GPIO as GPIO
 from multiprocessing import Process
 
@@ -26,9 +27,14 @@ def init():
 
 # PowerOff command on GPIO event
 def poweroff():
-    while True:
-        GPIO.wait_for_edge(powerPin, GPIO.FALLING)
-        os.system("shutdown -h now")
+        while True:
+                print(powerPin)
+                print(GPIO.input(powerPin))
+                while GPIO.input(powerPin) == GPIO.HIGH:
+                        time.sleep(0.5)
+                os.system("batocera-es-swissknife --emukill")
+                time.sleep(1)
+                os.system("poweroff")
 
 
 if __name__ == "__main__":
