@@ -1,8 +1,8 @@
 # gpic2bato
 **A set of scripts/config to use Gpi Case 2 with Batocera 41+**
 
-# Notice
-Actually support only Safe Shutdown, hdmi switch for GPi case 2 dock will be added in later releases.
+>[!NOTE]
+>Actually support only Safe Shutdown, hdmi switch for GPi case 2 dock will be added in later releases.
 
 # Info
 The GPi Case 2 has only a power switch and a power save button, so why do you need the Safe Shutdown script?  
@@ -24,6 +24,14 @@ Enjoy your GPi case 2 with Batocera
 
 ## Known issues
 During the first boot, and even after the first reboot triggered by install.sh it is very likely that sound doesn't work, just power off batocera and switch off the power switch, then sound will work correctly.
+
+## To Do
+- [X] Rewrite config.txt
+- [X] Adapt phyton script for Safe Shutdown.
+- [X] Write and test first version of install script.
+- [ ] Write a better service script to handle correcly the service.
+- [ ] Review the install script
+- [ ] Start working on script for GPi Case 2 Docking station.
 
 ## Thanks
 Retroflag, Batocera Team, Recalbox Team for their work
