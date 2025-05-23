@@ -22,6 +22,9 @@ Already created a Batocera sd card with RPi Imager (o similar software)
 
 Enjoy your GPi case 2 with Batocera
 
+## Known issues
+During the first boot, and even after the first reboot triggered by install.sh it is very likely that sound doesn't work, just power off batocera and switch off the power switch, then sound will work correctly.
+
 ## Thanks
 Retroflag, Batocera Team, Recalbox Team for their work
 
