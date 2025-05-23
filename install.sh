@@ -17,7 +17,7 @@ wget -O  $script "$SourcePath/GPic2SS.py"
 
 
 #Create Batocera Service (custom.sh is deprecated since v38)----------
-
+mkdir /userdata/system/services
 sleep 2s
 DIR=/userdata/system/services/GPic2SS
 
