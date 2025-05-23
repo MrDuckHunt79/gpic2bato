@@ -21,7 +21,7 @@ Already created a Batocera sd card with RPi Imager (o similar software)
 2) Insert sd card on your GPi case 2 and turn it on.
 3) Connect it to WiFi
 4) Then connect to it with an SSH client (default user is 'root' and password is 'linux')
-5) Run this command:
+5) Run this command:  
     wget -O - "https://mrduckhunt79.github.io/gpic2bato/install.sh" | bash
 
 Enjoy your GPi case 2 with Batocera
