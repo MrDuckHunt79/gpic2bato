@@ -8,8 +8,10 @@ In this project I have tried to merge and review scripts and configs taken from 
 
 
 ## Prerequisite:
-Already created a Batocera sd card with RPi Imager (o similar software)
-
+Already created a Batocera sd card with RPi Imager (o similar software) see instruction on Batocera website.
+> [!CAUTION]
+> Use the image for Raspberry Pi 4 B ! Don't get the one for GPi Case!
+ 
 ## Install:
 
 1)  Copy [config.txt](https://github.com/MrDuckHunt79/gpic2bato/blob/main/config.txt) to your boot partition of Batocera sd card (Usually labelled BATOCERA)
