@@ -21,3 +21,7 @@ Already created a Batocera sd card with RPi Imager (o similar software)
     wget -O - "https://mrduckhunt79.github.io/gpic2bato/install.sh" | bash
 
 Enjoy your GPi case 2 with Batocera
+
+## Thanks
+Retroflag, Batocera Team, Recalbox Team for their work
+
