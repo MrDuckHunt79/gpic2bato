@@ -1,10 +1,14 @@
 # gpic2bato
-**A set of scripts/config to use Gpi Case 2 with Batocera 41+**
+**A set of scripts/config to use Gpi Case 2 with Batocera 41+**  
+In this project I have tried to merge and review scripts and configs taken from the repository of Retroflag, Batocera and Recalbox, to get a config.txt and a service script that fit for Batocera 41+
 
 >[!NOTE]
->Actually support only Safe Shutdown, hdmi switch for GPi case 2 dock will be added in later releases.
+>Actually the installer activate only service that support Safe Shutdown feature, hdmi switch for GPi case 2 dock will be added in later releases.  
+>I'm working on this on my spare time, so develpment could take a little.
 
-# Info
+
+
+## Info
 The GPi Case 2 has only a power switch and a power save button, so why do you need the Safe Shutdown script?  
 It's a security measure to try to avoid data loss, so when you push the power save button (or automatically after 15 minutes of inactivity) the case enters in power save mode, then if not resumed for 20 minutes the case issues a GPIO event and the shutdown script powers off the system safely.
 
@@ -27,11 +31,12 @@ During the first boot, and even after the first reboot triggered by install.sh i
 
 ## To Do
 - [X] Rewrite config.txt
-- [X] Adapt phyton script for Safe Shutdown.
-- [X] Write and test first version of install script.
-- [ ] Write a better service script to handle correcly the service.
+- [X] Adapt python script for Safe Shutdown.
+- [X] Write and test the first version of the install script.
+- [ ] Write a better service script to handle correctly the service.
 - [ ] Review the install script
-- [ ] Start working on script for GPi Case 2 Docking station.
+- [ ] Rewrite python script to use gpiod istead of rpi.gpio
+- [ ] Start working on a script for GPi Case 2 Docking station.
 
 ## Thanks
 Retroflag, Batocera Team, Recalbox Team for their work
