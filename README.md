@@ -13,6 +13,7 @@ Install:
 2) Insert sd card on your GPi case 2 and turn it on.
 3) Connect it to WiFi
 4) Then connect to it with an SSH client
-5) Run this command " wget -O - "https://github.com/MrDuckHunt79/gpic2bato/install.sh" | bash
+5) Run this command:
+    wget -O - "https://github.com/MrDuckHunt79/gpic2bato/install.sh" | bash
 
 Enjoy your GPi case 2 with Batocera
