@@ -3,7 +3,7 @@
 In this project I have tried to merge and review scripts and configs taken from the repository of Retroflag, and even from the customized ones of Batocera and Recalbox, to get a config.txt and a service script that fit for Batocera 41+
 
 >[!NOTE]
->Actually the installer activate only service that support Safe Shutdown feature, hdmi switch for GPi case 2 dock will be added in later releases.  
+>Actually the installer activate only service that support Safe Shutdown feature, hdmi switch for GPi case 2 docking station will be maybe added in later releases.  
 >I'm working on this on my spare time, so develpment could take a little.
 
 
