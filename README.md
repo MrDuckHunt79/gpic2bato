@@ -5,7 +5,7 @@
 Actually support only Safe Shutdown, hdmi switch for GPi case 2 dock will be added in later releases.
 
 # Info
-The GPi Case 2 has only a power switch and a power save button, so why do you need the Safe Shutdown script?
+The GPi Case 2 has only a power switch and a power save button, so why do you need the Safe Shutdown script?  
 It's a security measure to try to avoid data loss, so when you push the power save button (or automatically after 20 minutes of inactivity) the case enters in power save mode, then if not resumed for 15 minutes the case issues a GPIO event and the shutdown script powers off the system safely.
 
 ## Prerequisite:
