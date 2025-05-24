@@ -13,9 +13,15 @@ mkdir /userdata/GPi2C
 sleep 2s
 script=/userdata/GPi2C/GPic2SS.py
 controller=/userdata/system/configs/emulationstation/es_input.cfg
+es_settings=/userdata/system/configs/es_settings.cfg
 
 wget -O  $script "$SourcePath/GPic2SS.py"
 wget -O  $controller "$SourcePath/es_input.cfg"
+
+if [ -f $es_settings ];
+        then
+                rm $es_settings
+fi
 
 #Create Batocera Service (custom.sh is deprecated since v38)----------
 if [ ! -d /userdata/system/services ];
