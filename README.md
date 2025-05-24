@@ -33,6 +33,7 @@ Already created a Batocera sd card with RPi Imager (o similar software) see inst
 - [X] Rewrite config.txt
 - [X] Adapt python script for Safe Shutdown.
 - [X] Write and test the first version of the install script.
+- [X] Added controller configuration.
 - [ ] Write a better service script to handle correctly the service.
 - [ ] Review the install script
 - [ ] Rewrite python script to use gpiod istead of rpi.gpio
