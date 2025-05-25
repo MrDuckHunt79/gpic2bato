@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SourcePath=https://mrduckhunt79.github.io/gpic2bato/
+SourcePath=https://mrduckhunt79.github.io/gpic2bato
 
 #Remount FS as RW------------------------------------------------
 
