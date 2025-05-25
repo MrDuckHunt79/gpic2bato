@@ -1,7 +1,8 @@
 import os
 import time
+import signal
+import logging
 import RPi.GPIO as GPIO
-from multiprocessing import Process
 
 #Tbh there is no physical Power Off button on case, that's only a power switch
 #and a Power Save button, and this button only switch case on power save state
@@ -12,38 +13,48 @@ from multiprocessing import Process
 
 #This is only the Safe Shudown, the docking HDMI switch support will be added later in other script
 
-# initialize pins
-powerPin = 26
-powerenPin = 27
+# Constants
+POWER_PIN = 26
+POWEREN_PIN = 27
+SHUTDOWN_COMMAND = "poweroff"
+KILL_COMMAND = "batocera-es-swissknife --emukill"
 
-# initialize GPIO settings
-def init():
+# Setup logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+# Initialize GPIO settings
+def init_gpio():
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(powerPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    GPIO.setup(powerenPin, GPIO.OUT)
-    GPIO.output(powerenPin, GPIO.HIGH)
+    GPIO.setup(POWER_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(POWEREN_PIN, GPIO.OUT)
+    GPIO.output(POWEREN_PIN, GPIO.HIGH)
     GPIO.setwarnings(False)
-
 
 # PowerOff command on GPIO event
 def poweroff():
+    try:
         while True:
-                print(powerPin)
-                print(GPIO.input(powerPin))
-                while GPIO.input(powerPin) == GPIO.HIGH:
-                        time.sleep(0.5)
-                os.system("batocera-es-swissknife --emukill")
+            if GPIO.input(POWER_PIN) == GPIO.LOW:
+                logging.info("Shutdown signal detected.")
+                os.system(KILL_COMMAND)
                 time.sleep(1)
-                os.system("poweroff")
+                os.system(SHUTDOWN_COMMAND)
+            time.sleep(0.5)
+    except Exception as e:
+        logging.error(f"Error in poweroff: {e}")
+    finally:
+        GPIO.cleanup()
 
+# Graceful exit handler
+def signal_handler(sig, frame):
+    logging.info("Terminating program...")
+    GPIO.cleanup()
+    exit(0)
 
 if __name__ == "__main__":
-    # initialize GPIO settings
-    init()
-    # create a multiprocessing.Process instance for each function to enable parallelism
-    powerProcess = Process(target=poweroff)
-    powerProcess.start()
+    signal.signal(signal.SIGINT, signal_handler)  # Handle Ctrl+C
+    signal.signal(signal.SIGTERM, signal_handler)  # Handle termination signals
 
-    powerProcess.join()
-
-    GPIO.cleanup()
+    init_gpio()
+    logging.info("GPIO initialized. Monitoring power button...")
+    poweroff()

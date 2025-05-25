@@ -1,0 +1,26 @@
+#!/bin/bash
+
+case "$1" in
+start)
+   phyton3 /userdata/GPi2C/GPic2SS.py &
+   echo $!>/var/run/GPic2SS.pid
+   ;;
+stop)
+   kill `cat /var/run/GPic2SS.pid`
+   rm /var/run/GPic2SS.pid
+   ;;
+restart)
+   $0 stop
+   $0 start
+   ;;
+status)
+   if [ -e /var/run/GPic2SS.pid ]; then
+      echo GPic2SS is running, pid=`cat /var/run/GPic2SS.pid`
+   else
+      echo GPIc2SS is NOT running
+      exit 1
+   fi
+   ;;
+esac
+
+exit 0

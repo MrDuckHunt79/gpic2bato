@@ -15,8 +15,10 @@ script=/userdata/GPi2C/GPic2SS.py
 controller=/userdata/system/configs/emulationstation/es_input.cfg
 es_settings=/userdata/system/configs/es_settings.cfg
 
+
 wget -O  $script "$SourcePath/GPic2SS.py"
 wget -O  $controller "$SourcePath/es_input.cfg"
+
 
 if [ -f $es_settings ];
         then
@@ -33,19 +35,23 @@ sleep 2s
 
 SERVICE=/userdata/system/services/GPic2SS
 
-if grep -q "python $script &" "$SERVICE";
+if [ -f $SERVICE ];
         then
-                if [ -x "$SERVICE" ];
-                        then
-                                echo "Service GPic2SS configured. Doing nothing."
-                        else
-                                chmod +x $SERVICE
-                fi
-        else
-                echo "python $script &" >> $SERVICE
-                chmod +x $SERVICE
-                echo "Service GPic2SS configured."
+         echo "Service GPic2SS already there. Doing nothing."
+        else 
+          wget -O $SERVICE "$SourcePath/GPic2SS"
 fi
+
+if [ -x "$SERVICE" ];
+        then
+          echo "Service GPic2SS alreadyconfigured. Doing nothing."
+        else
+          chmod +x $SERVICE
+          echo "Service GPic2SS configured."
+fi
+
+
+#Enable the service--------------------------------------------------
 
 batocera-services enable GPic2SS
 sleep 2s
