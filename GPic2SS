@@ -2,7 +2,7 @@
 
 case "$1" in
 start)
-   phyton3 /userdata/GPi2C/GPic2SS.py &
+   python3 /userdata/GPi2C/GPic2SS.py &
    echo $!>/var/run/GPic2SS.pid
    ;;
 stop)
