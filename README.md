@@ -1,10 +1,15 @@
 # gpic2bato
 **A set of scripts/config to use Gpi Case 2 with Batocera 41+**  
+
+## About
 In this project I have tried to merge and review scripts and configs taken from the repository of Retroflag, and even from the customized ones of Batocera and Recalbox, to get a config.txt and a service script that fit for Batocera 41+
 
->[!NOTE]
->Actually the installer activate only service that support Safe Shutdown feature, hdmi switch for GPi case 2 docking station will be maybe added in later releases.  
->I'm working on this on my spare time, so develpment could take a little.
+## What those script do:
+
+1) config.txt is configured to boot up Rpi4 Batocera image on Retrofalg GPi case 2 (Without it lcd isn't recognised)
+2) Install Safe Shutdown script to prevent dataloss
+3) Install a modified controller map to fit GPi case 2 Controller (thanks to Recalbox team)
+   
 
 
 ## Prerequisite:
