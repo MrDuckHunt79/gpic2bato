@@ -8,47 +8,60 @@ sleep 2s
 mount -o remount, rw /boot
 mount -o remount, rw /
 
-#Download Python script and controller config----------------------------
-mkdir /userdata/GPi2C
+#Setup directories------------------------------------------------
+
+if [ ! -d /userdata/GPi2C ];
+        then
+                mkdir /userdata/GPi2C
+                echo "Creating directory /userdata/GPi2C"
+fi
+
+
+if [ ! -d /userdata/system/services ];
+        then
+                mkdir /userdata/system/services
+                echo "Creating directory /userdata/system/services"
+fi
+
+#Configure variables--------------------------------------------
 sleep 2s
 script=/userdata/GPi2C/GPic2SS.py
 controller=/userdata/system/configs/emulationstation/es_input.cfg
 es_settings=/userdata/system/configs/es_settings.cfg
+SERVICE=/userdata/system/services/GPic2SS
 
-
-wget -O  $script "$SourcePath/GPic2SS.py"
-wget -O  $controller "$SourcePath/es_input.cfg"
-
-
+#Remove old files--------------------------------------------------
 if [ -f $es_settings ];
         then
                 rm $es_settings
 fi
-
-#Create Batocera Service (custom.sh is deprecated since v38)----------
-if [ ! -d /userdata/system/services ];
+if [ -f $script ];
         then
-                mkdir /userdata/system/services
+                rm $script
 fi
-
-sleep 2s
-
-SERVICE=/userdata/system/services/GPic2SS
-
+if [ -f $controller ];
+        then
+                rm $controller
+fi
 if [ -f $SERVICE ];
         then
-         echo "Service GPic2SS already there. Doing nothing."
-        else 
-          wget -O $SERVICE "$SourcePath/GPic2SS"
+                rm $SERVICE
 fi
 
-if [ -x "$SERVICE" ];
-        then
-          echo "Service GPic2SS alreadyconfigured. Doing nothing."
-        else
-          chmod +x $SERVICE
-          echo "Service GPic2SS configured."
-fi
+#Download Python script and controller config----------------------------
+echo "Downloading GPic2SS Python script and controller config from $SourcePath"
+wget -O $script "$SourcePath/GPic2SS.py"
+wget -O $controller "$SourcePath/es_input.cfg"
+
+
+
+#Create Batocera Service (custom.sh is deprecated since v38)----------
+sleep 2s
+echo "Creating Batocera service for GPic2SS"
+wget -O $SERVICE "$SourcePath/GPic2SS"
+chmod +x $SERVICE
+echo "Service GPic2SS configured."
+
 
 
 #Enable the service--------------------------------------------------
