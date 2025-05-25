@@ -10,7 +10,7 @@ In this project I have tried to merge and review scripts and configs taken from 
 ## Prerequisite:
 Already created a Batocera sd card with RPi Imager (o similar software) see instruction on Batocera website.
 > [!CAUTION]
-> Use the image for Raspberry Pi 4 B ! Don't get the one for GPi Case! Because is for another model based on Rasberry Pi 0!
+> Use the image for Raspberry Pi 4 B ! Don't get the one for GPi Case! Because is for another model based on Rasberry Pi 0!  
 > ![OK](https://github.com/MrDuckHunt79/gpic2bato/blob/main/imgs/RPI4.png) ![WRONG](https://github.com/MrDuckHunt79/gpic2bato/blob/main/imgs/gpi1.png)
  
 ## Install:
