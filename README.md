@@ -29,6 +29,10 @@ Already created a Batocera sd card with RPi Imager (o similar software) see inst
 > The GPi Case 2 has only a power switch and a power save button, so why do you need the Safe Shutdown script?  
 > It's a security measure to try to avoid data loss, so when you push the power save button (or automatically after 15 minutes of inactivity) the case enters in power save mode, then if not resumed for 20 minutes the case issues a GPIO event and the shutdown script powers off the system safely.
 
+## Update
+
+ Just run again:  wget -O - "https://mrduckhunt79.github.io/gpic2bato/install.sh" | bash
+
 ## To Do
 - [X] Rewrite config.txt
 - [X] Adapt python script for Safe Shutdown.
