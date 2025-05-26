@@ -6,7 +6,7 @@ In this project I have tried to merge and review scripts and configs taken from 
 
 ## What those script do:
 
-1) config.txt is configured to boot up Rpi4 Batocera image on Retrofalg GPi case 2 (Without it lcd isn't recognised)
+1) config.txt is configured to boot up Rpi4 Batocera image on Retrofalg GPi case 2 (Without it lcd isn't recognized)
 2) Install Safe Shutdown script to prevent dataloss
 3) Install a modified controller map to fit GPi case 2 Controller (thanks to Recalbox team)
    
