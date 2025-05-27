@@ -37,11 +37,7 @@ Already created a Batocera sd card with RPi Imager (o similar software) see inst
 6) Enjoy your GPi case 2 with Batocera
 
 > [!WARNING]
-> [!WARNING] During the first boot, and even after the first reboot triggered by install.sh it is very likely that sound doesn't work, just power off batocera and switch off the power switch, then sound will work correctly.
-
-> [!TIP]
-> The GPi Case 2 has only a power switch and a power save button, so why do you need the Safe Shutdown script?  
-> It's a security measure to try to avoid data loss, so when you push the power save button (or automatically after 15 minutes of inactivity) the case enters in power save mode, then if not resumed for 20 minutes the case issues a GPIO event and the shutdown script powers off the system safely.
+> During the first boot, and even after the first reboot triggered by install.sh it is very likely that sound doesn't work, just power off batocera and switch off the power switch, then sound will work correctly.
 
 ## Update:
 
@@ -57,5 +53,9 @@ Already created a Batocera sd card with RPi Imager (o similar software) see inst
 - [X] EXPERIMENTAL script for GPi Case 2 Docking station.
 
 ## Thanks
-Retroflag, Batocera Team, Recalbox Team for their work
+Retroflag, Batocera Team, Recalbox Team for their work  
+
+> [!TIP]
+> The GPi Case 2 has only a power switch and a power save button, so why do you need the Safe Shutdown script?  
+> It's a security measure to try to avoid data loss, so when you push the power save button (or automatically after 15 minutes of inactivity) the case enters in power save mode, then if not resumed for 20 minutes the case issues a GPIO event and the shutdown script powers off the system safely.
 
