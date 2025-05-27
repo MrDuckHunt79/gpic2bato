@@ -16,6 +16,7 @@ It's working but isn't hotswap, every time you change from docked to handheld an
 Service in not enabled by default you must press "start" -> "system options" -> "Services" -> "GPic2DS" 
 > [!TIP]
 > If you don't have a docking station, or if you use it only as charging station, does not enable the "GPi 2DS" service, is useless and reboot your GPi case 2 when you use the docking for charging.
+
 > [!WARNING]
 > When GPi case 2 is doked, automatically disable the onboard controller.
 
