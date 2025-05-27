@@ -7,12 +7,13 @@ In this project I have tried to merge and review scripts and configs taken from 
 ## What those script do:
 
 1) config.txt is configured to boot up Rpi4 Batocera image on Retrofalg GPi case 2 (Without it lcd isn't recognized)
-2) Install and endable Safe Shutdown service to prevent dataloss
+2) Install and endable Safe Shutdown service to prevent dataloss (Name of the service "GPic2SS" )
 3) Install a modified controller map to fit GPi case 2 Controller (thanks to Recalbox team)
-4) Install EXPERIMENTAL Docking Station service but don't enable it, you must do it yourself in Batocera menu
+4) Install EXPERIMENTAL Docking Station service but don't enable it, you must do it yourself in Batocera menu (Name of the service "GPic2DS" )
    
 ## EXPERIMENTAL Docking Station service
-It's working but isn't hotswap, every time you change from docked to handheld and vicevesa Batocera reboot to init the correct display, so you can't continue playing while changing,
+It's working but isn't hotswap, every time you change from docked to handheld and vicevesa Batocera reboot to init the correct display, so you can't continue playing while changing.
+Service in not enabled by default you must press "start" -> "system options" -> "Services" -> "GPic2DS"
 > [!WARNING]
 > When GPi case 2 is doked, automatically disable the onboard controller.
 
