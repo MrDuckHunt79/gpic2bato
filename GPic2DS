@@ -1,0 +1,26 @@
+#!/bin/bash
+
+case "$1" in
+start)
+   python3 /userdata/GPi2C/GPic2DS.py &
+   echo $!>/var/run/GPic2DS.pid
+   ;;
+stop)
+   kill `cat /var/run/GPic2DS.pid`
+   rm /var/run/GPic2DS.pid
+   ;;
+restart)
+   $0 stop
+   $0 start
+   ;;
+status)
+   if [ -e /var/run/GPic2DS.pid ]; then
+      echo GPic2DS is running, pid=`cat /var/run/GPic2DS.pid`
+   else
+      echo GPic2DS is NOT running
+      exit 1
+   fi
+   ;;
+esac
+
+exit 0

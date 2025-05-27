@@ -7,17 +7,23 @@ In this project I have tried to merge and review scripts and configs taken from 
 ## What those script do:
 
 1) config.txt is configured to boot up Rpi4 Batocera image on Retrofalg GPi case 2 (Without it lcd isn't recognized)
-2) Install Safe Shutdown script to prevent dataloss
+2) Install and endable Safe Shutdown service to prevent dataloss
 3) Install a modified controller map to fit GPi case 2 Controller (thanks to Recalbox team)
+4) Install EXPERIMENTAL Docking Station service but don't enable it, you must do it yourself in Batocera menu
    
-
+## EXPERIMENTAL Docking Station service
+It's working but isn't hotswap, every time you change from docked to handheld and vicevesa Batocera reboot to init the correct display, so you can't continue playing while changing,
+> [!WARNING]
+> When GPi case 2 is doked, automatically disable the onboard controller.
 
 ## Prerequisite:
 Already created a Batocera sd card with RPi Imager (o similar software) see instruction on Batocera website.
 > [!CAUTION]
 > Use the image for Raspberry Pi 4 B ! Don't get the one for GPi Case! Because is for another model based on Rasberry Pi 0!  
 > ![OK](https://github.com/MrDuckHunt79/gpic2bato/blob/main/imgs/RPI4.png) ![WRONG](https://github.com/MrDuckHunt79/gpic2bato/blob/main/imgs/gpi1.png)
- 
+>  
+> ISTALLATION MUST BE DONE IN HANDHELD MODE DON'T USE THE DOCKING STATION
+
 ## Install:
 
 1)  Copy [config.txt](https://github.com/MrDuckHunt79/gpic2bato/blob/main/config.txt) to your boot partition of Batocera sd card (Usually labelled BATOCERA)
@@ -29,7 +35,7 @@ Already created a Batocera sd card with RPi Imager (o similar software) see inst
 6) Enjoy your GPi case 2 with Batocera
 
 > [!WARNING]
-> During the first boot, and even after the first reboot triggered by install.sh it is very likely that sound doesn't work, just power off batocera and switch off the power switch, then sound will work correctly.
+> [!WARNING] During the first boot, and even after the first reboot triggered by install.sh it is very likely that sound doesn't work, just power off batocera and switch off the power switch, then sound will work correctly.
 
 > [!TIP]
 > The GPi Case 2 has only a power switch and a power save button, so why do you need the Safe Shutdown script?  
@@ -46,7 +52,7 @@ Already created a Batocera sd card with RPi Imager (o similar software) see inst
 - [X] Added controller configuration.
 - [X] Write a better service script to handle correctly the service.
 - [X] Review the install script
-- [ ] Start working on a script for GPi Case 2 Docking station.
+- [X] EXPERIMENTAL script for GPi Case 2 Docking station.
 
 ## Thanks
 Retroflag, Batocera Team, Recalbox Team for their work
