@@ -13,7 +13,9 @@ In this project I have tried to merge and review scripts and configs taken from 
    
 ## EXPERIMENTAL Docking Station service
 It's working but isn't hotswap, every time you change from docked to handheld and vicevesa Batocera reboot to init the correct display, so you can't continue playing while changing.  
-Service in not enabled by default you must press "start" -> "system options" -> "Services" -> "GPic2DS"
+Service in not enabled by default you must press "start" -> "system options" -> "Services" -> "GPic2DS" 
+> [!TIP]
+> If you don't have a docking station, or if you use it only as charging station, does not enable the "GPi 2DS" service, is useless and reboot your GPi case 2 when you use the docking for charging.
 > [!WARNING]
 > When GPi case 2 is doked, automatically disable the onboard controller.
 
