@@ -21,10 +21,11 @@ Already created a Batocera sd card with RPi Imager (o similar software) see inst
 > [!CAUTION]
 > Use the image for Raspberry Pi 4 B ! Don't get the one for GPi Case! Because is for another model based on Rasberry Pi 0!  
 > ![OK](https://github.com/MrDuckHunt79/gpic2bato/blob/main/imgs/RPI4.png) ![WRONG](https://github.com/MrDuckHunt79/gpic2bato/blob/main/imgs/gpi1.png)
->  
-> ISTALLATION MUST BE DONE IN HANDHELD MODE DON'T USE THE DOCKING STATION
+
 
 ## Install:
+> [!CAUTION]
+> ISTALLATION MUST BE DONE IN HANDHELD MODE DON'T USE THE DOCKING STATION  
 
 1)  Copy [config.txt](https://github.com/MrDuckHunt79/gpic2bato/blob/main/config.txt) to your boot partition of Batocera sd card (Usually labelled BATOCERA)
 2) Insert sd card on your GPi case 2 and turn it on.
